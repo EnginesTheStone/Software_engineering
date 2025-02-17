@@ -1,0 +1,36 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{%static 'styles.css' %}">
+    <meta charset="UTF-8">
+    
+</head>
+<body>
+<header>
+    <nav>
+        <div class="navbar-container">
+            <div class="burger-menu" id="burgerMenu">
+             &#9776;
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'buy' %}">Buy</a></li>
+                <li><a href="{% url 'sell' %}">Sell</a></li>
+                <li><a href="{% url 'stock' %}">Search Stock</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="clear"></div>
+</header>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+    <script src="{% static '/script.js' %}"></script>
+</body>
+</html>
