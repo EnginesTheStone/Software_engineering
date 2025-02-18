@@ -1,10 +1,10 @@
 body {
-    background-color: blue;
-    color: white;
+    background-color: whitesmoke;
+    color: black;
 }
 
 nav {
-    background-color: black;
+    background-color: green;
     padding: 10px;
     position: relative;
 
@@ -37,8 +37,8 @@ nav {
 
 
  .nav-links a:hover{
-    background-color: yellow;
-    color: black;
+    background-color: black;
+    color: white;
    }
 
 .burger-menu {
