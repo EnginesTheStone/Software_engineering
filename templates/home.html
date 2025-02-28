@@ -1,7 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
+<title>Home</title>
 
+<div class="container fluid">
+    <h2>Welcome to Magic City</h2>
+    <p>Explore 100s of MTG singles</p>
+    <div class="text-center mt-4">
+        <p>New here?</p>
+        <a href="{% url 'signup' %}" class="btn btn-success">Create account</a>
+    </div>
+    <div class="text-center my-4">
+        <p>Already have an account?</p>
+        <a href="{% url 'login' %}" class="btn btn-success">Log in</a>
+
+</div>
 
 
 

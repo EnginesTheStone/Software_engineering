@@ -1,14 +1,20 @@
 from django.urls import path
 from . import views
+from django.contrib.auth.decorators import login_required
+
 
 urlpatterns = [
 
-    path("home/", views.index, name = "index"),
+    path("", views.home, name = "home"),
     path("buy/", views.buy, name="buy" ),
-    path("sell/", views.sell, name = "sell"),
-    path("stock/", views.stock, name = "stock"),
-    path("signup/", views.signup, name = "signup"),
     path("checkout/", views.checkout, name = "checkout"),
-    path("api/", views.myCardsadd.as_view(), name = "cards_add"),
+    
+    path('add_to_cart/<int:product_id>/', login_required(views.add_to_cart), name='add_to_cart'),
+    path('cart/', views.view_cart, name='view_cart'),
+    path('remove_from_cart/<int:cart_id>/', views.remove_from_cart, name='remove_from_cart'),
+    path('purchase_confirmation/', views.purchase_confirmation, name='purchase_confirmation'),
+
+    
+
 
 ]

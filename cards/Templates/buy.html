@@ -3,7 +3,46 @@
 {% block content %}
 
 <title>buy</title>
-<h2>buy</h2>
-<div>
+
+
+<div class="bg-dark py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center mb-4">
+                <form method="GET" action="{% url 'buy' %}" class="w-25">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Search for a card..." value="{{ request.GET.q }}">
+                        <button class="btn btn-primary" type="submit">GO!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    {% for card in cards %}
+    <div class="col-md-3 mb-4">
+        <div class="card">
+            {% if card.cardimage %}
+                <img src="{{ card.cardimage.url }}" class="card-img-top img-fluid" alt="{{ card.cardname }}">
+            {% else %}
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product Image">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title"> {{ card.cardname }}</h5>
+                <p class="card-stock">{{ card.stock }}</p>
+                <p class="card-text"> £{{ card.cardprice }}</p>
+            
+                {% if user.is_authenticated %}
+                    <a href="{% url 'add_to_cart' card.id %}" class="btn btn-primary">Add to cart</a>
+                {% else %}
+                    <p>Please log in to add to cart</p>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}

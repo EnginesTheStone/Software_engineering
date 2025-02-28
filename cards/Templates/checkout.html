@@ -3,7 +3,36 @@
 {% block content %}
 
 <title>Checkout</title>
-<h2>Checkout</h2>
-<div>
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">Checkout</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                    <tr>
+                        <td> {{ item.product.cardname }}</td>
+                        <td> {{ item.product.cardprice }}</td>
+                        <td> {{ item.quantity }}</td>
+                        <td>£{{item.get_total_price }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex justify-content-between">
+        <h4>Total: £{{ total_price }}</h4>
+    </div>
+    <div class="text-center mt-4">
+        <a href="{% url 'purchase_confirmation' %}" class="btn btn-success">Pay</a>
+    </div>
 </div>
 {% endblock %}
