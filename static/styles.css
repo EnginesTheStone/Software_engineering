@@ -254,6 +254,10 @@ a:hover {
 
 }
 
+.card-img-top:hover {
+    opacity: 50%;
+}
+
 .cart-items {
     margin: 20px;
 }
