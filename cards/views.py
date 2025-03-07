@@ -20,7 +20,7 @@ def buy (request):
         cards = myCards.objects.all()
 
         
-    return render(request, "buy.html", {"cards": cards, "user":request.user})
+    return render(request, "buy.html", {"cards": cards,})
 
 
 def stock (request):
