@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w2(9!qk@yi(edi)yrqjl+63$7mtjpdi6u*y34k++y*a0^w15*3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = True 
 
 ALLOWED_HOSTS = ["magic-city.onrender.com"]
 
