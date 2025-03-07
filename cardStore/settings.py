@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-w2(9!qk@yi(edi)yrqjl+63$7mtjpdi6u*y34k++y*a0^w15*3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [https://magic-city.onrender.com/]
 
 
 # Application definition
