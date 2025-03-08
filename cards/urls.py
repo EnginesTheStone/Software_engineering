@@ -10,8 +10,7 @@ def redirect_to_home(request):
 
 urlpatterns = [
     #URL links#
-    path('', redirect_to_home),
-    path("cards/", include('cards.urls')),#views.home, name = "home"#),
+    path("", views.home, name = "home"),
     path("buy/", views.buy, name="buy" ),
     path("checkout/", views.checkout, name = "checkout"),
     path('add_to_cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
