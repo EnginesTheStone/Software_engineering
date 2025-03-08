@@ -1,9 +1,6 @@
 from django.urls import path, include
 from . import views
-from django.shortcuts import redirect
 
-def redirect_to_home(request):
-    return redirect ('/cards/')
 
 
 
